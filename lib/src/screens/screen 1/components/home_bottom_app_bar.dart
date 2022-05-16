@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HomeBottomAppBar extends StatelessWidget {
-  const HomeBottomAppBar({
+class HomePageBottomAppBar extends StatelessWidget {
+  const HomePageBottomAppBar({
     Key? key,
   }) : super(key: key);
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sepp_note/src/screens/screen%201/components/home_bottom_app_bar.dart';
+import 'package:sepp_note/src/screens/screen%201/components/home_page_search_bar.dart';
 import 'package:sepp_note/src/screens/screen%201/home_page_provider.dart';
 
 class HomePage extends StatelessWidget {
@@ -25,35 +26,12 @@ class _HomePage extends StatelessWidget {
       home: Scaffold(
           drawer: const Drawer(),
           body: Column(
-            children: [
-              const SizedBox(height: 50),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Container(
-                  height: 50,
-                  decoration: const BoxDecoration(
-                      color: Colors.black12,
-                      borderRadius: BorderRadius.all(Radius.circular(30))),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      IconButton(
-                          icon: const Icon(Icons.menu),
-                          onPressed: () {
-                            // Drawer();
-                          }),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.68,
-                      ),
-                      IconButton(
-                          icon: const Icon(Icons.search), onPressed: () {})
-                    ],
-                  ),
-                ),
-              ),
+            children: const [
+              SizedBox(height: 50),
+              HomePageSearchBar(),
             ],
           ),
-          bottomNavigationBar: const HomeBottomAppBar(),
+          bottomNavigationBar: const HomePageBottomAppBar(),
           floatingActionButton: FloatingActionButton(
             backgroundColor: Colors.white,
             shape: const RoundedRectangleBorder(
@@ -62,8 +40,6 @@ class _HomePage extends StatelessWidget {
               ),
             ),
             onPressed: () {},
-            tooltip: 'Increment Counter',
-            child: const Icon(Icons.add, color: Colors.orange, size: 45),
           ),
           floatingActionButtonLocation: FloatingActionButtonLocation.endDocked),
     );
