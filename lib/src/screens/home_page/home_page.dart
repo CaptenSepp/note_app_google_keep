@@ -26,9 +26,37 @@ class _HomePage extends StatelessWidget {
       home: Scaffold(
           drawer: const Drawer(),
           body: Column(
-            children: const [
-              SizedBox(height: 50),
-              HomePageSearchBar(),
+            children: [
+              const SizedBox(height: 50),
+              const HomePageSearchBar(),
+              // SizedBox(height: MediaQuery.of(context),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: GridView.count(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 10,
+                    crossAxisSpacing: 10,
+                    children: List.generate(10, (index) {
+                      return Expanded(
+                        child: Container(
+                          decoration: const BoxDecoration(
+                              color: Colors.black26,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(20),
+                              )),
+                          child: Center(
+                            child: Text(
+                              'Item $index',
+                              style: Theme.of(context).textTheme.headline5,
+                            ),
+                          ),
+                        ),
+                      );
+                    }),
+                  ),
+                ),
+              ),
             ],
           ),
           bottomNavigationBar: const HomePageBottomAppBar(),
