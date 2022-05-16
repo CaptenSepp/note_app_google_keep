@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sepp_note/src/screens/screen%201/components/home_bottom_app_bar.dart';
-import 'package:sepp_note/src/screens/screen%201/components/home_page_search_bar.dart';
-import 'package:sepp_note/src/screens/screen%201/home_page_provider.dart';
+import 'package:sepp_note/src/screens/home_page/components/home_page_bottom_app_bar.dart';
+import 'package:sepp_note/src/screens/home_page/components/home_page_search_bar.dart';
+import 'package:sepp_note/src/screens/home_page/home_page_provider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -34,6 +34,11 @@ class _HomePage extends StatelessWidget {
           bottomNavigationBar: const HomePageBottomAppBar(),
           floatingActionButton: FloatingActionButton(
             backgroundColor: Colors.white,
+            child: const Icon(
+              Icons.add,
+              color: Colors.orange,
+              size: 45,
+            ),
             shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(
                 Radius.circular(15),

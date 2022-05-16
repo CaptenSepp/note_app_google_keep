@@ -22,11 +22,13 @@ class HomePageSearchBar extends StatelessWidget {
                 onPressed: () {
                   // Drawer();
                 }),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.68,
-            ),
+            SizedBox(width: MediaQuery.of(context).size.width * 0.55),
             IconButton(
-                icon: const Icon(Icons.search), onPressed: () {})
+                icon: const Icon(Icons.view_agenda_outlined, size: 25),
+                onPressed: () {}),
+            IconButton(
+                icon: const Icon(Icons.person_sharp, size: 30),
+                onPressed: () {})
           ],
         ),
       ),
