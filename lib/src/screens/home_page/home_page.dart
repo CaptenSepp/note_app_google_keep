@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:provider/provider.dart';
 import 'package:sepp_note/src/screens/home_page/components/home_page_bottom_app_bar.dart';
 import 'package:sepp_note/src/screens/home_page/components/home_page_search_bar.dart';
@@ -32,8 +33,8 @@ class _HomePage extends StatelessWidget {
               // SizedBox(height: MediaQuery.of(context),
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: GridView.count(
+                  padding: const EdgeInsets.all(10.0),
+                  child: StaggeredGrid.count(
                     crossAxisCount: 2,
                     mainAxisSpacing: 10,
                     crossAxisSpacing: 10,
@@ -48,7 +49,7 @@ class _HomePage extends StatelessWidget {
                           child: Center(
                             child: Text(
                               'Item $index',
-                              style: Theme.of(context).textTheme.headline5,
+                              style: const TextStyle(fontSize: 50),
                             ),
                           ),
                         ),
