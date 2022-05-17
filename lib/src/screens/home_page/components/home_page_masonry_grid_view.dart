@@ -3,6 +3,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../assets/values.dart';
+import 'note_component.dart';
 
 class HomePageMasonryGridView extends StatelessWidget {
   const HomePageMasonryGridView({Key? key}) : super(key: key);
@@ -44,7 +45,8 @@ class _HomePageStaggeredGrid extends StatelessWidget {
               ),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text(notes[index], style: const TextStyle(fontSize: 20)),
+                //TODO second index should change
+                child: NoteComponent(index: index),
               ),
             );
           },
