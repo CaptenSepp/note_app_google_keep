@@ -4,20 +4,20 @@ import 'package:provider/provider.dart';
 
 import '../../../../assets/values.dart';
 
-class HomePageStaggeredGrid extends StatelessWidget {
-  const HomePageStaggeredGrid({Key? key}) : super(key: key);
+class HomePageMasonryGridView extends StatelessWidget {
+  const HomePageMasonryGridView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => HomePageStaggeredGridProvider(),
+      create: (_) => HomePageMasonryGridViewProvider(),
       child: const _HomePageStaggeredGrid(),
     );
   }
 }
 
 //TODO in provider nemikhad?
-class HomePageStaggeredGridProvider extends ChangeNotifier {}
+class HomePageMasonryGridViewProvider extends ChangeNotifier {}
 
 class _HomePageStaggeredGrid extends StatelessWidget {
   const _HomePageStaggeredGrid({

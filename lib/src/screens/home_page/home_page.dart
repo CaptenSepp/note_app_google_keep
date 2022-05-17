@@ -32,7 +32,7 @@ class _HomePage extends StatelessWidget {
               SizedBox(height: 50),
               HomePageSearchBar(),
               // SizedBox(height: MediaQuery.of(context),
-              HomePageStaggeredGrid(),
+              HomePageMasonryGridView(),
             ],
           ),
           bottomNavigationBar: const HomePageBottomAppBar(),
