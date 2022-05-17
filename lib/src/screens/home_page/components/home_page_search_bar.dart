@@ -22,11 +22,17 @@ class HomePageSearchBar extends StatelessWidget {
                 onPressed: () {
                   // Drawer();
                 }),
-            SizedBox(width: MediaQuery.of(context).size.width * 0.55),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.55,
+              child: const TextField(
+                  decoration: InputDecoration(border: InputBorder.none),
+                  cursorColor: Colors.black),
+            ),
             IconButton(
                 icon: const Icon(Icons.view_agenda_outlined, size: 25),
                 onPressed: () {}),
             IconButton(
+              //TODO here should change to photo from network or gallery or ...
                 icon: const Icon(Icons.person_sharp, size: 30),
                 onPressed: () {})
           ],
