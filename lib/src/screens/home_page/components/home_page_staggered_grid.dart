@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:provider/provider.dart';
 
+import '../../../../assets/values.dart';
+
 class HomePageStaggeredGrid extends StatelessWidget {
   const HomePageStaggeredGrid({Key? key}) : super(key: key);
 
@@ -14,6 +16,7 @@ class HomePageStaggeredGrid extends StatelessWidget {
   }
 }
 
+//TODO in provider nemikhad?
 class HomePageStaggeredGridProvider extends ChangeNotifier {}
 
 class _HomePageStaggeredGrid extends StatelessWidget {
@@ -30,22 +33,21 @@ class _HomePageStaggeredGrid extends StatelessWidget {
           crossAxisCount: 2,
           mainAxisSpacing: 10,
           crossAxisSpacing: 10,
-          children: List.generate(10, (index) {
-            return Container(
-              decoration: BoxDecoration(
-                  border: Border.all(width: 2, color: Colors.grey),
-                  // color: Colors.black26,
-                  borderRadius: const BorderRadius.all(
-                    Radius.circular(20),
-                  )),
-              child: Center(
-                child: Text(
-                  'Item $index',
-                  style: const TextStyle(fontSize: 50),
+          children: List.generate(
+            notes.length,
+            (index) {
+              return Container(
+                decoration: BoxDecoration(
+                    border: Border.all(width: 2, color: Colors.grey),
+                    borderRadius: const BorderRadius.all(Radius.circular(20))),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child:
+                      Text(notes[index], style: const TextStyle(fontSize: 20)),
                 ),
-              ),
-            );
-          }),
+              );
+            },
+          ),
         ),
       ),
     );
