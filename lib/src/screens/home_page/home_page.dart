@@ -4,7 +4,7 @@ import 'package:sepp_note/src/screens/home_page/components/home_page_bottom_app_
 import 'package:sepp_note/src/screens/home_page/components/home_page_search_bar.dart';
 import 'package:sepp_note/src/screens/home_page/home_page_provider.dart';
 
-import 'components/home_page_staggered_grid.dart';
+import 'components/home_page_masonry_grid_view.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
