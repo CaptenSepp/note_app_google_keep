@@ -37,11 +37,13 @@ class _SearchPage extends StatelessWidget {
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.55,
                       child: const Padding(
-                        padding: EdgeInsets.only(bottom: 10),
+                        padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
                         child: TextField(
-                            decoration:
-                                InputDecoration(border: InputBorder.none),
-                            cursorHeight: 30,
+                            decoration: InputDecoration(
+                                border: InputBorder.none,
+                                hintText: 'Search your notes'),
+                            style: TextStyle(fontSize: 22),
+                            cursorHeight: 25,
                             cursorColor: Colors.black),
                       ),
                     )
