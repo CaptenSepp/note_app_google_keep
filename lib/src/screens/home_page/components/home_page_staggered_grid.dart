@@ -28,26 +28,26 @@ class _HomePageStaggeredGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: StaggeredGrid.count(
+        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+        child: MasonryGridView.count(
           crossAxisCount: 2,
+          itemCount: notes.length,
           mainAxisSpacing: 10,
           crossAxisSpacing: 10,
-          children: List.generate(
-            notes.length,
-            (index) {
-              return Container(
-                decoration: BoxDecoration(
-                    border: Border.all(width: 2, color: Colors.grey),
-                    borderRadius: const BorderRadius.all(Radius.circular(20))),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child:
-                      Text(notes[index], style: const TextStyle(fontSize: 20)),
+          itemBuilder: (context, index) {
+            return Container(
+              decoration: BoxDecoration(
+                border: Border.all(width: 2, color: Colors.grey),
+                borderRadius: const BorderRadius.all(
+                  Radius.circular(20),
                 ),
-              );
-            },
-          ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(notes[index], style: const TextStyle(fontSize: 20)),
+              ),
+            );
+          },
         ),
       ),
     );
