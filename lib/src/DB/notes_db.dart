@@ -1,8 +1,6 @@
 class DataBase {
   static DataBase? _dataBaseInstance;
   final String notesBoxName = 'notesBox';
-  final String todosBoxName = 'todosBox';
-  final String remindersBoxName = 'remindersBox';
 
   DataBase._();
 
