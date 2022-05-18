@@ -1,5 +1,5 @@
 *.dart linguist-detectable=true
-*.c linguist-detectable=false
+*.c++ linguist-detectable=false
 *.java linguist-detectable=false
 *.dart text
 
