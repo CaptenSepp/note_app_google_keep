@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../../../../../../assets/values.dart';
 // import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
-
 class NoteComponent extends StatelessWidget {
   const NoteComponent({
     required this.index,
