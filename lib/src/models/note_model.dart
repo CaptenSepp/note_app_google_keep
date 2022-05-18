@@ -1,18 +1,15 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
 class NoteModel {
-  final List<dynamic> noteElementsList;
   final String noteModelId;
   final String title;
   final DateTime createdDate;
+
   final TextCheckboxNoteModel? textCheckboxNote;
   final ImageNoteModel? imageNote;
   final RecordNoteModel? recordNote;
 
   NoteModel({
-    required this.noteElementsList,
     required this.title,
     required this.noteModelId,
     required this.createdDate,
@@ -39,8 +36,4 @@ class TextCheckboxNoteModel {
     //TODO how can i write it better to understand
     this.isTextOrCheckbox = true,
   });
-  // bool isTextOrCheckbox() {
-  //   bool result = true;
-  //   return result;
-  // }
 }
