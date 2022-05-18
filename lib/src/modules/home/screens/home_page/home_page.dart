@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sepp_note/src/screens/home_page/components/home_page_bottom_app_bar.dart';
-import 'package:sepp_note/src/screens/home_page/components/home_page_search_bar.dart';
-import 'package:sepp_note/src/screens/home_page/home_page_provider.dart';
 
-import 'components/home_page_bottom_app_bar.dart';
-import 'components/home_page_masonry_grid_view.dart';
+import '../../components/home_page_bottom_app_bar.dart';
+import '../../components/home_page_masonry_grid_view.dart';
+import '../../components/home_page_search_bar.dart';
+import '../../state_managment/home_provider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -13,7 +12,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => HomePageProvider(),
+      create: (_) => HomeProvider(),
       child: const _HomePage(),
     );
   }
