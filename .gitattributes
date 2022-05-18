@@ -1,6 +1,11 @@
 *.dart linguist-detectable=true
 *.c++ linguist-detectable=false
-
+*.java linguist-detectable=false
 *.dart text
+
 *.dart_ linguist-language=Dart
+*.dart linguist-language=Dart
+*.dart linguist-detectable=true
+android/* linguist-vendored
+build/* linguist-vendored
 
