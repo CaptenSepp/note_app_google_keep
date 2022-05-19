@@ -1,4 +1,7 @@
-import 'package:flutter/material.dart';
+
+import 'text_checkbox_note_model';
+import 'image_note_model.dart';
+import 'record_note_model.dart';
 
 class NoteModel {
   final String noteModelId;
@@ -16,24 +19,5 @@ class NoteModel {
     this.textCheckboxNote,
     this.imageNote,
     this.recordNote,
-  });
-}
-
-class RecordNoteModel {}
-
-class ImageNoteModel {
-  final Image image;
-
-  ImageNoteModel(this.image);
-}
-
-class TextCheckboxNoteModel {
-  final String text;
-  final bool isTextOrCheckbox;
-
-  TextCheckboxNoteModel({
-    required this.text,
-    //TODO how can i write it better to understand
-    this.isTextOrCheckbox = true,
   });
 }
