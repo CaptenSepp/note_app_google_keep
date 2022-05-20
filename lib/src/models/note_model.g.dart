@@ -1,38 +1,38 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'text_note_model.dart';
+part of 'note_model.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class TextCheckboxNoteModelAdapter extends TypeAdapter<TextCheckboxNoteModel> {
+class NoteModelAdapter extends TypeAdapter<NoteModel> {
   @override
   final int typeId = 0;
 
   @override
-  TextCheckboxNoteModel read(BinaryReader reader) {
+  NoteModel read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return TextCheckboxNoteModel(
-      id: fields[0] as String,
-      text: fields[1] as String,
-      isTextNotCheckbox: fields[2] as bool,
+    return NoteModel(
+      title: fields[1] as String,
+      noteModelId: fields[0] as String,
+      createdDate: fields[2] as DateTime,
     );
   }
 
   @override
-  void write(BinaryWriter writer, TextCheckboxNoteModel obj) {
+  void write(BinaryWriter writer, NoteModel obj) {
     writer
       ..writeByte(3)
       ..writeByte(0)
-      ..write(obj.id)
+      ..write(obj.noteModelId)
       ..writeByte(1)
-      ..write(obj.text)
+      ..write(obj.title)
       ..writeByte(2)
-      ..write(obj.isTextNotCheckbox);
+      ..write(obj.createdDate);
   }
 
   @override
@@ -41,7 +41,7 @@ class TextCheckboxNoteModelAdapter extends TypeAdapter<TextCheckboxNoteModel> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is TextCheckboxNoteModelAdapter &&
+      other is NoteModelAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

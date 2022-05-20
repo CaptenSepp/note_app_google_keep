@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'package:hive/hive.dart';
 
-part 'text_note_model.g.dart';
+// part 'text_note_model.g.dart';
 
-@HiveType(typeId: 0)
+@HiveType(typeId: 01)
 class TextCheckboxNoteModel {
   @HiveField(0)
   final String id;
