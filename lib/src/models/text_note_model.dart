@@ -1,9 +1,7 @@
-// ignore_for_file: file_names
-
 import 'dart:convert';
 import 'package:hive/hive.dart';
 
-part 'text_checkbox_note_model.g.dart';
+part 'text_note_model.g.dart';
 
 @HiveType(typeId: 0)
 class TextCheckboxNoteModel {
