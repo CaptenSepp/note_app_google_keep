@@ -1,5 +1,4 @@
-
-import 'text_checkbox_note_model';
+import 'package:sepp_note/src/models/text_note_model.dart';
 import 'image_note_model.dart';
 import 'record_note_model.dart';
 

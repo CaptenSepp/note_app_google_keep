@@ -1,4 +1,5 @@
 class RecordNoteModel {
+  
   final String id;
   final Sound sound;
 
