@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sepp_note/src/modules/home/screens/note_maker_page/note_maker_page.dart';
 
 import '../../components/home_page_bottom_app_bar.dart';
 import '../../components/home_page_masonry_grid_view.dart';
@@ -46,7 +47,12 @@ class _HomePage extends StatelessWidget {
               Radius.circular(15),
             ),
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const NoteMaker()),
+            );
+          },
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.endDocked);
   }

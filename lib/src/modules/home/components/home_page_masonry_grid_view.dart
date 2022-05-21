@@ -17,7 +17,6 @@ class HomePageMasonryGridView extends StatelessWidget {
   }
 }
 
-//TODO in provider nemikhad?
 class HomePageMasonryGridViewProvider extends ChangeNotifier {}
 
 class _HomePageStaggeredGrid extends StatelessWidget {
@@ -37,17 +36,14 @@ class _HomePageStaggeredGrid extends StatelessWidget {
           crossAxisSpacing: 10,
           itemBuilder: (context, index) {
             return Container(
+              padding: const EdgeInsets.all(8.0),
               decoration: BoxDecoration(
                 border: Border.all(width: 2, color: Colors.grey),
                 borderRadius: const BorderRadius.all(
-                  Radius.circular(20),
+                  Radius.circular(16),
                 ),
               ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                //TODO second index should change
-                child: NoteComponent(index: index),
-              ),
+              child: NoteComponent(index: index),
             );
           },
         ),
