@@ -18,3 +18,4 @@ List<String> notes = [
   to simplify the description. However it is possible to change these directions in t""",
   "6846846846 684684 6846846 846846846",
 ];
+  double cursorWidth = 1;
