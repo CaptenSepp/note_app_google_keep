@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sepp_note/src/modules/home/screens/search_page/search_page.dart';
 
 class HomePageSearchBar extends StatelessWidget {
   const HomePageSearchBar({
@@ -22,17 +23,22 @@ class HomePageSearchBar extends StatelessWidget {
                 onPressed: () {
                   // Drawer();
                 }),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.55,
-              child: const TextField(
-                  decoration: InputDecoration(border: InputBorder.none),
-                  cursorColor: Colors.black),
+            Expanded(
+              child: GestureDetector(
+                // behavior: HitTestBehavior.translucent,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const SearchPage()),
+                  );
+                },
+              ),
             ),
             IconButton(
                 icon: const Icon(Icons.view_agenda_outlined, size: 25),
                 onPressed: () {}),
             IconButton(
-              //TODO here should change to photo from network or gallery or ...
+                //TODO here should change to photo from network or gallery or ...
                 icon: const Icon(Icons.person_sharp, size: 30),
                 onPressed: () {})
           ],
