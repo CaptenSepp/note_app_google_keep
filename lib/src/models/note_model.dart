@@ -13,8 +13,11 @@ class NoteModel {
   @HiveField(2)
   final DateTime createdDate;
 
+  @HiveField(3)
   final TextCheckboxNoteModel? textCheckboxNote;
+  @HiveField(4)
   final ImageNoteModel? imageNote;
+  @HiveField(5)
   final RecordNoteModel? recordNote;
 
   NoteModel({

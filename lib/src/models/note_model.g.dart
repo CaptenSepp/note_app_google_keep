@@ -20,19 +20,28 @@ class NoteModelAdapter extends TypeAdapter<NoteModel> {
       title: fields[1] as String,
       noteModelId: fields[0] as String,
       createdDate: fields[2] as DateTime,
+      textCheckboxNote: fields[3] as TextCheckboxNoteModel?,
+      imageNote: fields[4] as ImageNoteModel?,
+      recordNote: fields[5] as RecordNoteModel?,
     );
   }
 
   @override
   void write(BinaryWriter writer, NoteModel obj) {
     writer
-      ..writeByte(3)
+      ..writeByte(6)
       ..writeByte(0)
       ..write(obj.noteModelId)
       ..writeByte(1)
       ..write(obj.title)
       ..writeByte(2)
-      ..write(obj.createdDate);
+      ..write(obj.createdDate)
+      ..writeByte(3)
+      ..write(obj.textCheckboxNote)
+      ..writeByte(4)
+      ..write(obj.imageNote)
+      ..writeByte(5)
+      ..write(obj.recordNote);
   }
 
   @override
