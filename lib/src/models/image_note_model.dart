@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 
 class ImageNoteModel {
   final String id;
-  final String title;
+  // final String title;
 
-  final List<Image> imagesList;
+  final List<Image>? imagesList;
 
   ImageNoteModel(
-      {required this.title, required this.id, required this.imagesList});
+      {
+      // required this.title,
+      required this.id,
+      required this.imagesList});
 }
+  // final Image a = Image(image: image);
