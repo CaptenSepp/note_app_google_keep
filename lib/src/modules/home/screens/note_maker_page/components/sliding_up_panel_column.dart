@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 class SlidingUpPanelColumn extends StatelessWidget {
   const SlidingUpPanelColumn({
-    required this.iconsList,
-    required this.textsList,
+    // required this.iconsList,
+    // required this.textsList,
     Key? key,
   }) : super(key: key);
 
-  final List<Icon> iconsList;
-  final List<String> textsList;
+  // final List<Icon> iconsList;
+  // final List<String> textsList;
 
   @override
   Widget build(BuildContext context) {

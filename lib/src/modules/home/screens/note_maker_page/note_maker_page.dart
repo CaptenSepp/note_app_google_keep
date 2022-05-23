@@ -39,7 +39,7 @@ class _NoteMaker extends StatelessWidget {
         backdropEnabled: true,
         backdropColor: Colors.black,
         backdropOpacity: 0.7,
-        panel: SizedBox(
+        panel: const SizedBox(
           height: 150,
           child: SlidingUpPanelColumn(),
         ),

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:sepp_note/src/modules/home/state_managment/note_maker_provider.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 class StickyBottomAppBar extends StatelessWidget {
   final PanelController pc;
+  final NoteMakerProvider provider;
 
   const StickyBottomAppBar({
     Key? key,
+    required this.provider,
     required this.pc,
   }) : super(key: key);
 
