@@ -25,7 +25,10 @@ class StickyBottomAppBar extends StatelessWidget {
               },
             ),
             IconButton(
-                icon: const Icon(Icons.palette_outlined), onPressed: () {}),
+                icon: const Icon(Icons.palette_outlined),
+                onPressed: () {
+                  pc.open();
+                }),
             const SizedBox(
               width: 50,
             ),
@@ -36,7 +39,11 @@ class StickyBottomAppBar extends StatelessWidget {
             const SizedBox(
               width: 95,
             ),
-            IconButton(icon: const Icon(Icons.more_vert), onPressed: () {}),
+            IconButton(
+                icon: const Icon(Icons.more_vert),
+                onPressed: () {
+                  pc.open();
+                }),
           ],
         ),
       ),
