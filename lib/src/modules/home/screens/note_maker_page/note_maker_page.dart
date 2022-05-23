@@ -5,6 +5,7 @@ import 'package:sliding_up_panel/sliding_up_panel.dart';
 import '../../../../../assets/values.dart';
 import '../../state_managment/note_maker_provider.dart';
 import 'components/note_maker_app_bar.dart';
+import 'components/sliding_up_panel_column.dart';
 import 'components/sticky_bottom_bar.dart';
 
 class NoteMaker extends StatelessWidget {
@@ -31,12 +32,16 @@ class _NoteMaker extends StatelessWidget {
     //
     return Scaffold(
       body: SlidingUpPanel(
-        controller: pc,
         defaultPanelState: PanelState.CLOSED,
-        maxHeight: 300,
+        controller: pc,
+        maxHeight: 180,
         minHeight: 0,
-        panel: const Center(
-          child: Text('data'),
+        backdropEnabled: true,
+        backdropColor: Colors.black,
+        backdropOpacity: 0.7,
+        panel: SizedBox(
+          height: 150,
+          child: SlidingUpPanelColumn(),
         ),
         body: Column(
           children: [
@@ -95,7 +100,7 @@ class _NoteMaker extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: StickyBottomAppBar(pc: pc),
+      bottomNavigationBar: StickyBottomAppBar(pc: pc, provider: provider),
     );
   }
 }
