@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sepp_note/src/models/text_note_model.dart';
+import 'package:sepp_note/src/modules/home/screens/note_maker_page/components/sliding_up_panel_column.dart';
+import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 import '../../../models/image_note_model.dart';
 import '../../../models/note_model.dart';
@@ -54,4 +56,25 @@ class NoteMakerProvider extends ChangeNotifier {
 //       return null;
 //     }
 //   }
+
+  // whichPanel(PanelController pc, String uk) {
+  //   if (uk == 'add') {
+  //     List<IconData> iconDatasList = [
+  //       Icons.photo_camera_outlined,
+  //       Icons.photo_outlined,
+  //       Icons.draw_outlined,
+  //       Icons.mic_none
+  //     ];
+  //     List<String> textsList = [
+  //       'Take photo',
+  //       'Add iamge',
+  //       'Drawing',
+  //       'Recording'
+  //     ];
+  //     List columnList = [];
+  //     columnList.add(iconDatasList);
+  //     columnList.add(textsList);
+  //     return columnList;
+  //   }
+  // }
 }
