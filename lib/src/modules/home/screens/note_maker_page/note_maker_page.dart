@@ -31,6 +31,7 @@ class _NoteMaker extends StatelessWidget {
 
     //
     return Scaffold(
+      //TODO use AppBar
       body: SlidingUpPanel(
         defaultPanelState: PanelState.CLOSED,
         controller: pc,
