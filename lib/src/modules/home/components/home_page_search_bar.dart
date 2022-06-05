@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sepp_note/src/modules/home/screens/search_page/search_page.dart';
+import 'package:sepp_note/src/modules/home/screens/search_page.dart';
 
 class HomePageSearchBar extends StatelessWidget {
   const HomePageSearchBar({
