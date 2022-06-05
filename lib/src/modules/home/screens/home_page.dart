@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sepp_note/src/modules/home/screens/note_maker_page/note_maker_page.dart';
+import 'package:sepp_note/src/modules/home/screens/note_maker_page.dart';
 
-import '../../components/home_page_bottom_app_bar.dart';
-import '../../components/home_page_masonry_grid_view.dart';
-import '../../components/home_page_search_bar.dart';
-import '../../state_managment/home_provider.dart';
+import '../components/home_page_bottom_app_bar.dart';
+import '../components/home_page_masonry_grid_view.dart';
+import '../components/home_page_search_bar.dart';
+import '../state_managment/home_provider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -50,7 +50,7 @@ class _HomePage extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const NoteMaker()),
+              MaterialPageRoute(builder: (context) => const NoteMakerPage()),
             );
           },
         ),
