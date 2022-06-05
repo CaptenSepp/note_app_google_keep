@@ -1,26 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:provider/provider.dart';
+
+import 'package:sepp_note/src/models/note_model.dart';
 
 import 'note_component.dart';
 
 class HomePageMasonryGridView extends StatelessWidget {
-  const HomePageMasonryGridView({Key? key}) : super(key: key);
+  final List<NoteModel> noteModels;
 
-  @override
-  Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => HomePageMasonryGridViewProvider(),
-      child: const _HomePageStaggeredGrid(),
-    );
-  }
-}
-
-class HomePageMasonryGridViewProvider extends ChangeNotifier {}
-
-class _HomePageStaggeredGrid extends StatelessWidget {
-  const _HomePageStaggeredGrid({
+  const HomePageMasonryGridView({
     Key? key,
+    required this.noteModels,
   }) : super(key: key);
 
   @override
@@ -30,7 +20,7 @@ class _HomePageStaggeredGrid extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 10.0),
         child: MasonryGridView.count(
           crossAxisCount: 2,
-          itemCount: 15,
+          itemCount: noteModels.length,
           mainAxisSpacing: 10,
           crossAxisSpacing: 10,
           itemBuilder: (context, index) {
@@ -42,7 +32,9 @@ class _HomePageStaggeredGrid extends StatelessWidget {
                   Radius.circular(16),
                 ),
               ),
-              child: NoteComponent(index: index),
+              child: NoteComponent(
+                noteModel: noteModels[index],
+              ),
             );
           },
         ),
