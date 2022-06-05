@@ -1,16 +1,34 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+
 import 'package:sepp_note/src/models/text_note_model.dart';
 import 'package:sepp_note/src/modules/home/screens/note_maker_page/components/sliding_up_panel_column.dart';
-import 'package:sliding_up_panel/sliding_up_panel.dart';
 
-import '../../../models/image_note_model.dart';
 import '../../../models/note_model.dart';
-import '../../../models/record_note_model.dart';
 
 class NoteMakerProvider extends ChangeNotifier {
   TextEditingController titleController = TextEditingController();
   TextEditingController textController = TextEditingController();
-  //TODO how to get image from galaray or file manager of the user?
+  //? how to get image from galaray or file manager of the user?
+  //! with imagePicker Package
+  // ! whichPanel Variable has add as the value at first
+
+  SlidingUpPanelColumn whichPanelWidget = SlidingUpPanelColumn.add(
+    buttons: const [
+      'Take photos',
+      'Add image',
+      'Drawing',
+      'Recording',
+      'Checkboxes',
+    ],
+    icons: const [
+      Icons.abc,
+      Icons.abc,
+      Icons.abc,
+      Icons.abc,
+      Icons.abc,
+    ],
+  );
 
   NoteModel onSave() {
     NoteModel newNoteModel = NoteModel(
@@ -18,8 +36,8 @@ class NoteMakerProvider extends ChangeNotifier {
       noteModelId: UniqueKey().toString(),
       createdDate: DateTime.now(),
       textCheckboxNote: textCheckbox(),
-      // imageNote: image(),
-      // recordNote: record(),
+      //todo imageNote: image(),
+      //todo recordNote: record(),
     );
 
     return newNoteModel;
@@ -33,48 +51,68 @@ class NoteMakerProvider extends ChangeNotifier {
       return null;
     }
   }
-  //TODO i made ImageNoteModel nulable
-  //TODO ImagePicker Widget does that
-//   ImageNoteModel? image() {
-//     if () {
-//       return ImageNoteModel(
-//           id: UniqueKey().toString(), imagesList: imageList());
-//     } else {
-//       return null;
-//     }
-//   }
+//------------------------------------------------------------------------------
 
-//   List<Image>? imageList() {
-//     List<Image>? list;
-//     return list;
-//   }
+  void whichPanelGet(String whichPanelPressed) {
+    String whichPanel = whichPanelPressed;
+    panelSet(whichPanel);
+  }
 
-//   RecordNoteModel? record() {
-//     if () {
-//       return RecordNoteModel(id: UniqueKey().toString(), sound: Sound());
-//     } else {
-//       return null;
-//     }
-//   }
+  void panelSet(String whichPanelChose) {
+    switch (whichPanelChose) {
+      case 'add':
+        whichPanelWidget = SlidingUpPanelColumn.add(
+          buttons: const [
+            'Take photos',
+            'Add image',
+            'Drawing',
+            'Recording',
+            'Checkboxes'
+          ],
+          icons: const [
+            Icons.abc,
+            Icons.abc,
+            Icons.abc,
+            Icons.abc,
+            Icons.abc,
+          ],
+        );
+        break;
+      case 'backgroundColor':
+        whichPanelWidget = SlidingUpPanelColumn.backgroudColor(
+          buttons: const [
+            'Color',
+            'Theme',
+          ],
+          icons: const [
+            Icons.abc,
+            Icons.abc,
+          ],
+        );
+        break;
+      case 'more':
+        whichPanelWidget = SlidingUpPanelColumn.more(
+          buttons: const [
+            'Delete',
+            'Make a copy',
+            'send',
+            'Collaborator',
+            'Labels',
+          ],
+          icons: const [
+            Icons.abc,
+            Icons.abc,
+            Icons.abc,
+            Icons.abc,
+            Icons.abc,
+          ],
+        );
+        break;
+      default:
+    }
+    notifyListeners();
+  }
 
-  // whichPanel(PanelController pc, String uk) {
-  //   if (uk == 'add') {
-  //     List<IconData> iconDatasList = [
-  //       Icons.photo_camera_outlined,
-  //       Icons.photo_outlined,
-  //       Icons.draw_outlined,
-  //       Icons.mic_none
-  //     ];
-  //     List<String> textsList = [
-  //       'Take photo',
-  //       'Add iamge',
-  //       'Drawing',
-  //       'Recording'
-  //     ];
-  //     List columnList = [];
-  //     columnList.add(iconDatasList);
-  //     columnList.add(textsList);
-  //     return columnList;
-  //   }
-  // }
+  //! i made ImageNoteModel nulable
+  //! ImagePicker Widget does that
 }

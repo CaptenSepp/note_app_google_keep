@@ -5,7 +5,6 @@ import 'package:sliding_up_panel/sliding_up_panel.dart';
 import '../../../../../assets/values.dart';
 import '../../state_managment/note_maker_provider.dart';
 import 'components/note_maker_app_bar.dart';
-import 'components/sliding_up_panel_column.dart';
 import 'components/sticky_bottom_bar.dart';
 
 class NoteMaker extends StatelessWidget {
@@ -31,7 +30,8 @@ class _NoteMaker extends StatelessWidget {
 
     //
     return Scaffold(
-      //TODO use AppBar
+      appBar: AppBar(),
+      //todo: use AppBar
       body: SlidingUpPanel(
         defaultPanelState: PanelState.CLOSED,
         controller: pc,
@@ -40,15 +40,17 @@ class _NoteMaker extends StatelessWidget {
         backdropEnabled: true,
         backdropColor: Colors.black,
         backdropOpacity: 0.7,
-        panel: const SizedBox(
+        panel: SizedBox(
           height: 150,
-          child: SlidingUpPanelColumn(),
+          child: context.watch<NoteMakerProvider>().whichPanelWidget,
         ),
         body: Column(
           children: [
             Container(
               height: 110,
-              decoration: const BoxDecoration(color: Colors.transparent),
+              decoration: const BoxDecoration(
+                color: Colors.transparent,
+              ),
               child: const Align(
                 alignment: Alignment.bottomLeft,
                 child: NoteMakerAppBar(),
@@ -59,7 +61,9 @@ class _NoteMaker extends StatelessWidget {
             Container(),
 
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20.0,
+              ),
               child: TextField(
                 cursorColor: Colors.black,
                 cursorHeight: 30,
@@ -69,12 +73,16 @@ class _NoteMaker extends StatelessWidget {
                 decoration: const InputDecoration(
                   border: InputBorder.none,
                   hintText: 'Title',
-                  hintStyle: TextStyle(fontSize: 25),
+                  hintStyle: TextStyle(
+                    fontSize: 25,
+                  ),
                 ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20.0,
+              ),
               child: ConstrainedBox(
                 constraints: const BoxConstraints(
                   maxHeight: 300.0,

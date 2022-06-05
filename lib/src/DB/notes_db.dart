@@ -5,7 +5,7 @@ class DataBase {
   DataBase._();
 
   DataBase? instanceGetter() {
-    // TODO a = b if a null
+    //! a = b if a null
     _dataBaseInstance ??= DataBase._();
     return _dataBaseInstance;
   }

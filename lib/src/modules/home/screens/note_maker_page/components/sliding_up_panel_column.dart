@@ -1,19 +1,27 @@
 import 'package:flutter/material.dart';
 
 class SlidingUpPanelColumn extends StatelessWidget {
-  const SlidingUpPanelColumn({
-    // required this.iconsList,
-    // required this.textsList,
+  List<String> buttons;
+  List<IconData> icons;
+  SlidingUpPanelColumn.add({
+    required this.buttons,
+    required this.icons,
+    Key? key,
+  }) : super(key: key);
+  SlidingUpPanelColumn.backgroudColor({
+    required this.buttons,
+    required this.icons,
+    Key? key,
+  }) : super(key: key);
+  SlidingUpPanelColumn.more({
+    required this.buttons,
+    required this.icons,
     Key? key,
   }) : super(key: key);
 
-  // final List<Icon> iconsList;
-  // final List<String> textsList;
-
   @override
   Widget build(BuildContext context) {
-    final Icon icon;
-    final Text text;
+    //!add the values here to use in widgets
 
     return Column(
       children: [
@@ -21,13 +29,14 @@ class SlidingUpPanelColumn extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(10.0),
             child: Row(
-              children: const [
-                Icon(Icons.photo_camera_outlined),
+              children: [
+                // Icon(Icons.photo_camera_outlined),
+                Icon(icons[0]),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Text(
-                    'Take photo',
-                    style: TextStyle(fontSize: 18),
+                    buttons[0],
+                    style: const TextStyle(fontSize: 18),
                   ),
                 )
               ],
@@ -38,13 +47,13 @@ class SlidingUpPanelColumn extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(10.0),
             child: Row(
-              children: const [
-                Icon(Icons.photo_outlined),
+              children: [
+                Icon(icons[1]),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Text(
-                    'Add image',
-                    style: TextStyle(fontSize: 18),
+                    buttons[1],
+                    style: const TextStyle(fontSize: 18),
                   ),
                 )
               ],
@@ -55,13 +64,13 @@ class SlidingUpPanelColumn extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(10.0),
             child: Row(
-              children: const [
-                Icon(Icons.draw_outlined),
+              children: [
+                Icon(icons[2]),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Text(
-                    'Drawing',
-                    style: TextStyle(fontSize: 18),
+                    buttons[2],
+                    style: const TextStyle(fontSize: 18),
                   ),
                 )
               ],
@@ -72,13 +81,13 @@ class SlidingUpPanelColumn extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(10.0),
             child: Row(
-              children: const [
-                Icon(Icons.mic_none),
+              children: [
+                Icon(icons[3]),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Text(
-                    'Recording',
-                    style: TextStyle(fontSize: 18),
+                    buttons[3],
+                    style: const TextStyle(fontSize: 18),
                   ),
                 )
               ],

@@ -38,7 +38,7 @@ class HomePageSearchBar extends StatelessWidget {
                 icon: const Icon(Icons.view_agenda_outlined, size: 25),
                 onPressed: () {}),
             IconButton(
-                //TODO here should change to photo from network or gallery or ...
+                //todo here should change to photo from network or gallery or ...
                 icon: const Icon(Icons.person_sharp, size: 30),
                 onPressed: () {})
           ],

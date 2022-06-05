@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sepp_note/src/modules/home/state_managment/note_maker_provider.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
@@ -24,13 +25,14 @@ class StickyBottomAppBar extends StatelessWidget {
             IconButton(
               icon: const Icon(Icons.add_box_outlined),
               onPressed: () {
-                pc.open();
+                // context.read<NoteMakerProvider>().whichPanel;
+                provider.whichPanelGet('add');
               },
             ),
             IconButton(
                 icon: const Icon(Icons.palette_outlined),
                 onPressed: () {
-                  pc.open();
+                  provider.whichPanelGet('backgroundColor');
                 }),
             const SizedBox(
               width: 50,
@@ -45,7 +47,7 @@ class StickyBottomAppBar extends StatelessWidget {
             IconButton(
                 icon: const Icon(Icons.more_vert),
                 onPressed: () {
-                  pc.open();
+                  provider.whichPanelGet('mode');
                 }),
           ],
         ),
