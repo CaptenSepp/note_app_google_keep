@@ -17,6 +17,7 @@ class HomePageBottomAppBar extends StatelessWidget {
         ),
       ),
       child: SizedBox(
+        //
         width: double.infinity,
         height: 60,
         child: Row(children: [

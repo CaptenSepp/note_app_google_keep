@@ -9,6 +9,8 @@ class NoteComponent extends StatelessWidget {
   final int index;
   @override
   Widget build(BuildContext context) {
+    //todo it should get NoteModel from Hive Box
+
     return Column(
       children: const [
         Text('image', style: TextStyle(fontSize: 20)),

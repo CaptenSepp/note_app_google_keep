@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:hive/hive.dart';
 
 class TextCheckboxNoteModel {
   final String id;

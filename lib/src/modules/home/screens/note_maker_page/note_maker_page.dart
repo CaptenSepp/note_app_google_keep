@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 import '../../../../../assets/values.dart';
 import '../../state_managment/note_maker_provider.dart';
@@ -24,65 +25,91 @@ class _NoteMaker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //
-    //TODO chera bayad in final bashe, chera alan meghdar nadare, ma ke behesh meghdar dadim? meghdaresh await hast?
     final provider = context.watch<NoteMakerProvider>();
+    PanelController pc = PanelController();
+
     //
     return Scaffold(
-      body: Column(
-        children: [
-          Container(
-            height: 110,
-            decoration: const BoxDecoration(color: Colors.transparent),
-            child: const Align(
-              alignment: Alignment.bottomLeft,
-              child: NoteMakerAppBar(),
+      appBar: AppBar(),
+      //todo: use AppBar
+      body: SlidingUpPanel(
+        defaultPanelState: PanelState.CLOSED,
+        controller: pc,
+        maxHeight: 180,
+        minHeight: 0,
+        backdropEnabled: true,
+        backdropColor: Colors.black,
+        backdropOpacity: 0.7,
+        panel: SizedBox(
+          height: 150,
+          child: context.watch<NoteMakerProvider>().whichPanelWidget,
+        ),
+        body: Column(
+          children: [
+            Container(
+              height: 110,
+              decoration: const BoxDecoration(
+                color: Colors.transparent,
+              ),
+              child: const Align(
+                alignment: Alignment.bottomLeft,
+                child: NoteMakerAppBar(),
+              ),
             ),
-          ),
 
-          //images go on top of the title, so means here
-          Container(),
+            //images go on top of the title, so means here
+            Container(),
 
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: TextField(
-                cursorColor: Colors.black,
-                cursorHeight: 30,
-                cursorWidth: cursorWidth,
-                controller: provider.titleController,
-                decoration: const InputDecoration(
-                    border: InputBorder.none,
-                    hintText: 'Title',
-                    hintStyle: TextStyle(fontSize: 25))),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(
-                maxHeight: 300.0,
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20.0,
               ),
               child: TextField(
                 cursorColor: Colors.black,
+                cursorHeight: 30,
                 cursorWidth: cursorWidth,
-                maxLines: null,
-                controller: provider.noteController,
+                //
+                controller: provider.titleController,
                 decoration: const InputDecoration(
-                  hintText: "Note",
                   border: InputBorder.none,
+                  hintText: 'Title',
+                  hintStyle: TextStyle(
+                    fontSize: 25,
+                  ),
                 ),
               ),
             ),
-          ),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20.0,
+              ),
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(
+                  maxHeight: 300.0,
+                ),
+                child: TextField(
+                  cursorColor: Colors.black,
+                  cursorWidth: cursorWidth,
+                  maxLines: null,
+                  //
+                  controller: provider.textController,
+                  decoration: const InputDecoration(
+                    hintText: "Note",
+                    border: InputBorder.none,
+                  ),
+                ),
+              ),
+            ),
 
-          //text here
-          Container(),
+            //text here
+            Container(),
 
-          //audio here
-          Container(),
-        ],
+            //audio here
+            Container(),
+          ],
+        ),
       ),
-      // ignore: prefer_const_literals_to_create_immutables
-      bottomNavigationBar: const StickyBottomAppBar(),
+      bottomNavigationBar: StickyBottomAppBar(pc: pc, provider: provider),
     );
   }
 }
-
